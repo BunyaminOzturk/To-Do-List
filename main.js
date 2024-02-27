@@ -13,11 +13,14 @@ const addItem = (element) => {
     listDOM.append(liDOM)
 }
 
+function eklendiToast(){
+    var toast = document.querySelector('#liveToast');
+    toast.classList.remove('hide');
+    toast.classList.add('show');
+    $(toast).toast('show');
+}
 function newElement(event){
     //event.preventDefault()
+    eklendiToast()
     addItem(taskDOM.value)
 }
-
-
-
-
