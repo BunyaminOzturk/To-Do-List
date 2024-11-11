@@ -110,3 +110,7 @@ input {
 .button:hover {
   background-color: #bbb;
 }
+
+.completed {
+  text-decoration: line-through; /* Yazıyı ortasından çiz */
+}

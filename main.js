@@ -18,7 +18,6 @@ function eklendiToast(){
     toast.classList.remove('hide');
     toast.classList.add('show');
     $(toast).toast('show');
-    //document.querySelector("#task").innerText = "Bugün ne yapacaksın?";
 }
 function newElement(event){
     eklendiToast()
@@ -27,8 +26,11 @@ function newElement(event){
     document.querySelector("#task").innerText = "Bugün ne yapacaksın?";
 }
 
-
 function removeItem(element) {
     const listItem = element.parentElement;
     listItem.remove();
+}
+
+function toggleComplete(element) {
+    element.classList.toggle("completed");
 }
