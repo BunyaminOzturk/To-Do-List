@@ -28,3 +28,7 @@ function newElement(event){
 }
 
 
+function removeItem(element) {
+    const listItem = element.parentElement;
+    listItem.remove();
+}
