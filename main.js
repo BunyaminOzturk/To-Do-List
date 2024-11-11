@@ -18,9 +18,13 @@ function eklendiToast(){
     toast.classList.remove('hide');
     toast.classList.add('show');
     $(toast).toast('show');
+    //document.querySelector("#task").innerText = "Bugün ne yapacaksın?";
 }
 function newElement(event){
-    //event.preventDefault()
     eklendiToast()
     addItem(taskDOM.value)
+    taskDOM.value = '';
+    document.querySelector("#task").innerText = "Bugün ne yapacaksın?";
 }
+
+
