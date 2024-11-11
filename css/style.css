@@ -114,3 +114,13 @@ input {
 .completed {
   text-decoration: line-through; /* Yazıyı ortasından çiz */
 }
+
+.tick {
+  display: none; /* Başlangıçta tik işareti görünmesin */
+  margin-right: 10px;
+}
+
+.completed .tick {
+  display: inline-block; /* Yazı çizildiğinde tik işaretini göster */
+  color: green;
+}
