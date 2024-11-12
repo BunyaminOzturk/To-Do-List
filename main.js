@@ -5,12 +5,15 @@ let listDOM = document.querySelector("#list")
 const addItem = (element) => {
     console.log(taskDOM.value)
     let liDOM = document.createElement('li')
+    liDOM.setAttribute("onclick", "toggleComplete(this)");
     liDOM.innerHTML = ` 
     ${element}<button type="delete-btn" class="ml-3 mb-3 mt-3 close" data-dismiss="toast" aria-label="Close" onclick="removeItem(this)">
           <span aria-hidden="true">&times;</span>
         </button>
     `
+   // toggleComplete(liDOM)
     listDOM.append(liDOM)
+    
 }
 
 function eklendiToast(){
@@ -33,4 +36,5 @@ function removeItem(element) {
 
 function toggleComplete(element) {
     element.classList.toggle("completed");
+    element.classList.toggle("checked");
 }
