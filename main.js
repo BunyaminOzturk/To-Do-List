@@ -1,23 +1,19 @@
 let taskDOM = document.querySelector("#task")
-let buttonDOM = document.querySelector("#liveToastBtn")
 let listDOM = document.querySelector("#list")
 
 
 function sorgu(){
     let kontrolDOM = document.querySelector("#task");
     if(kontrolDOM.value.trim() === "" ) { 
-        console.log("boş bırakılamaz")
         kontrolDOM.innerText = "Bugün ne yapacaksın?"
+        bosGecemezsinToast()
     } else {
         newElement()
         addItem(element)
     }
-
 }
 
 const addItem = (element) => {
-    console.log(taskDOM.value)
-
     let liDOM = document.createElement('li')
     liDOM.setAttribute("onclick", "toggleComplete(this)");
     liDOM.innerHTML = ` 
@@ -26,7 +22,6 @@ const addItem = (element) => {
         </button>
     `
     listDOM.append(liDOM)
-    
 }
 
 function eklendiToast(){
@@ -36,7 +31,10 @@ function eklendiToast(){
     $(toast).toast('show');
 }
 function bosGecemezsinToast(){
-    var toast = document.querySelector("#liveToast")
+    var toast = document.querySelector('#LiveToastBos');
+    toast.classList.remove('hide');
+    toast.classList.add('show');
+    $(toast).toast('show');
 }
 function newElement(event){
     eklendiToast()
